@@ -2,7 +2,7 @@ package com.steamedbunx.android.employeeworkinghourtracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.steamedbunx.android.employeeworkinghourtracker.ui.main.LandingFragment
+import com.steamedbunx.android.employeeworkinghourtracker.ui.landing.LandingFragment
 
 class MainActivity : AppCompatActivity() {
 

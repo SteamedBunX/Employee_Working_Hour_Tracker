@@ -1,4 +1,4 @@
-package com.steamedbunx.android.employeeworkinghourtracker.ui.main
+package com.steamedbunx.android.employeeworkinghourtracker.ui.landing
 
 import androidx.lifecycle.ViewModel
 
