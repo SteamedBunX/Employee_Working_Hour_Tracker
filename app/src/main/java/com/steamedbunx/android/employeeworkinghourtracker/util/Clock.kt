@@ -1,9 +1,12 @@
 package com.steamedbunx.android.employeeworkinghourtracker.util
 
 import android.os.Handler
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import java.util.*
 
-class Clock{
+class Clock() : LifecycleObserver{
 
     private val utils = TimerUtil.getInstance()
 
@@ -30,7 +33,8 @@ class Clock{
 
     var onTickListener: OnTickListener? = null
 
-    fun reset(){
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    fun start(){
         val currentTime = Calendar.getInstance()
         currentTime.time = Date()
         hour = currentTime.get(Calendar.HOUR_OF_DAY).toByte()
@@ -57,6 +61,7 @@ class Clock{
         onTickListener?.onTick(utils.getTimerString(hour, min))
     }
 
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     fun stop(){
         handler.removeCallbacks(runnable)
     }

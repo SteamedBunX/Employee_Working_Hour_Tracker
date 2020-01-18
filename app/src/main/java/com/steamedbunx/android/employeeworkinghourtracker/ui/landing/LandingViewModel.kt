@@ -14,9 +14,11 @@ class LandingViewModel : ViewModel() {
 
     init{
         initClock()
-        startTimer()
     }
 
+    fun initLifeCycleObserver(lifecycle: Lifecycle){
+        lifecycle.addObserver(clock)
+    }
 
     fun initClock(){
         clock.setListener(
@@ -26,17 +28,6 @@ class LandingViewModel : ViewModel() {
                 }
             })
     }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    fun startTimer(){
-        clock.reset()
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    fun stopTimer(){
-        clock.stop()
-    }
-
 
 
 }
