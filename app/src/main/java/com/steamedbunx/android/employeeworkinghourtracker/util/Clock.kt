@@ -50,14 +50,15 @@ class Clock() : LifecycleObserver{
 
     fun tick(){
         min++
-        hour++
         if(min >= MAX_MIN){
             min = 0
+            hour++
+            if(hour >= MAX_HOUR)
+            {
+                hour = 0
+            }
         }
-        if(hour >= MAX_HOUR)
-        {
-            hour = 0
-        }
+
         onTickListener?.onTick(utils.getTimerString(hour, min))
     }
 
