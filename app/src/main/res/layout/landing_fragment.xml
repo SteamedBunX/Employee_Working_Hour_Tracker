@@ -18,41 +18,69 @@
             android:id="@+id/textView_Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="11:00"
             android:textColor="@color/colorWhite"
-            app:layout_constraintBottom_toTopOf="@+id/button_ClockIn"
+            android:textSize="120sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            tools:text="11:00" />
 
         <Button
             android:id="@+id/button_ClockIn"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLight"
+            android:height="50dp"
+            android:background="@drawable/rounded_corner"
             android:text="Clock In"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
+            android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/button_ClockOut"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_Time" />
+            app:layout_constraintTop_toBottomOf="@+id/guideline2" />
 
         <Button
             android:id="@+id/button_ClockOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="92dp"
-            android:background="@color/colorPrimaryLight"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corner"
             android:text="Clock Out"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_ClockIn" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/button_ClockIn"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent="0.70"
+            app:layout_constraintTop_toBottomOf="@+id/button_ClockOut" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

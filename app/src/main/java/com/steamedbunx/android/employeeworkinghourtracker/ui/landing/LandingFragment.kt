@@ -2,10 +2,8 @@ package com.steamedbunx.android.employeeworkinghourtracker.ui.landing
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.steamedbunx.android.employeeworkinghourtracker.R
 import com.steamedbunx.android.employeeworkinghourtracker.databinding.LandingFragmentBinding
@@ -16,7 +14,7 @@ class LandingFragment : Fragment() {
         fun newInstance() = LandingFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: LandingViewModel
     private lateinit var binding: LandingFragmentBinding
 
     override fun onCreateView(
@@ -26,15 +24,21 @@ class LandingFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.landing_fragment, container, false
         )
+        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(LandingViewModel::class.java)
 
        
         // TODO: Use the ViewModel
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.overflow_menu, menu)
     }
 
 }
