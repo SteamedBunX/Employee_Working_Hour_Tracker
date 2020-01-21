@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ui.pinpad.PinPadFragment" >
+
+    <TextView
+        android:id="@+id/textView_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Enter Your Pin"
+        android:textColor="@color/colorWhite"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_Title" />
+
+    <TextView
+        android:id="@+id/textView_PasswordDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_Password_Right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_Password_Left"
+        app:layout_constraintTop_toTopOf="@+id/guideline_Password_Top"
+        tools:text="******" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_Password_Right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_Password_Left"
+        app:layout_constraintTop_toBottomOf="@id/textView_PasswordDisplay" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Password_Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Password_Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Password_Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Pad_Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_Pad_Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintDimensionRatio="0.75"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_Pad_Right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_Pad_Left"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <Button
+            android:id="@+id/button_Pad_1"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="1"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_Pad_Hori1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_Pad_Vert1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_Pad_2"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="2"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_Pad_Hori1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_Pad_Vert2"
+            app:layout_constraintStart_toStartOf="@+id/guideline_Pad_Vert1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_Pad_3"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="3"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_Pad_Hori1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_Pad_Vert2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_Pad_4"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="4"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_Pad_Hori2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_Pad_Vert1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Pad_Hori1" />
+
+        <Button
+            android:id="@+id/button_Pad_5"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="5"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_Pad_Hori2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_Pad_Vert2"
+            app:layout_constraintStart_toStartOf="@+id/guideline_Pad_Vert1"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Pad_Hori1" />
+
+        <Button
+            android:id="@+id/button_Pad_6"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="6"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_Pad_Hori2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_Pad_Vert2"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Pad_Hori1" />
+
+        <Button
+            android:id="@+id/button_Pad_7"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="7"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_Pad_Hori3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_Pad_Vert1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Pad_Hori2" />
+
+        <Button
+            android:id="@+id/button_Pad_8"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="8"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_Pad_Hori3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_Pad_Vert2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline_Pad_Vert1"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Pad_Hori2"
+            app:layout_constraintVertical_bias="0.325" />
+
+        <Button
+            android:id="@+id/button_Pad_9"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="9"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_Pad_Hori3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline_Pad_Vert2"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Pad_Hori2"
+            app:layout_constraintVertical_bias="0.325" />
+
+        <Button
+            android:id="@+id/button_Pad_0"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="0"
+            android:textColor="@color/colorWhite"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_Pad_Vert2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline_Pad_Vert1"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Pad_Hori3"
+            app:layout_constraintVertical_bias="0.325" />
+
+        <Button
+            android:id="@+id/button_Pad_Enter"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="Enter"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline_Pad_Vert2"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Pad_Hori3"
+            app:layout_constraintVertical_bias="0.325" />
+
+        <Button
+            android:id="@+id/button_Pad_12"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/pinpad_button"
+            android:text="DELETE"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_Pad_Vert1"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Pad_Hori3"
+            app:layout_constraintVertical_bias="0.325" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_Pad_Hori1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_Pad_Hori2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_Pad_Hori3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_Pad_Vert1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.333" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_Pad_Vert2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.666" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

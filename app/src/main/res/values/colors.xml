@@ -6,4 +6,6 @@
     <color name="colorBackGroundPrimary">#2B364B</color>
     <color name="colorPrimaryLight">#536992</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorConfirmGreen">#4ABC65</color>
+    <color name="colorCancelRed">#E43B52</color>
 </resources>
