@@ -5,6 +5,9 @@ import com.steamedbunx.android.employeeworkinghourtracker.util.Clock
 import java.util.*
 
 class LandingViewModel : ViewModel() {
+
+    val ADMIN_PASSWORD = 1124
+
     var currentTime = Date()
 
     val clock = Clock()
@@ -29,5 +32,9 @@ class LandingViewModel : ViewModel() {
             })
     }
 
+
+    fun isAdmin(pin:Int):Boolean{
+        return pin == ADMIN_PASSWORD
+    }
 
 }
