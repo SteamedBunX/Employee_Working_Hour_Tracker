@@ -18,4 +18,9 @@
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 
+    <style name="SwitchCompatTheme" >
+        <item name="thumbTint">@color/switch_thumb_color</item>
+        <item name="trackTint">@color/switch_track_color</item>
+    </style>
+
 </resources>
