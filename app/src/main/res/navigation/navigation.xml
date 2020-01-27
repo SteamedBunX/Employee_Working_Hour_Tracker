@@ -16,7 +16,7 @@
         <fragment
             android:id="@+id/pinPadFragment_toConfirmation"
             android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.pinpad.PinPadFragment"
-            android:label="pin_pad_fragment_to_employee"
+            android:label="pin_pad_fragment"
             tools:layout="@layout/pin_pad_fragment">
             <action
                 android:id="@+id/action_pinPadFragment_to_manageEmployeeFragment"
@@ -52,7 +52,7 @@
         <fragment
             android:id="@+id/pinPadFragment_toConfirmation"
             android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.pinpad.PinPadFragment"
-            android:label="pin_pad_fragment_to_checkinout"
+            android:label="pin_pad_fragment"
             tools:layout="@layout/pin_pad_fragment">
             <action
                 android:id="@+id/action_pinPadFragment_to_confirmationFragment"

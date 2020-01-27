@@ -1,13 +1,17 @@
 package com.steamedbunx.android.employeeworkinghourtracker
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.transition.Visibility
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.steamedbunx.android.employeeworkinghourtracker.databinding.MainActivityBinding
 import com.steamedbunx.android.employeeworkinghourtracker.ui.landing.LandingFragment
@@ -25,6 +29,8 @@ class MainActivity : AppCompatActivity() {
             DataBindingUtil.setContentView<MainActivityBinding>(this, R.layout.main_activity)
         navController = this.findNavController(R.id.navHostFragment)
         NavigationUI.setupWithNavController(botNavBar,navController)
+        navController.addOnDestinationChangedListener(destinationChangeListener)
+
 
     }
 
@@ -32,12 +38,20 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp()
     }
 
-
-//    val navListener = object : BottomNavigationView.OnNavigationItemSelectedListener{
-//        override fun onNavigationItemSelected(item: MenuItem): Boolean {
-//
-//        }
-//    }
+    val destinationChangeListener = object:NavController.OnDestinationChangedListener{
+        override fun onDestinationChanged(
+            controller: NavController,
+            destination: NavDestination,
+            arguments: Bundle?
+        ) {
+            if(destination.label == "pin_pad_fragment")
+            {
+                botNavBar.visibility = View.GONE
+            }else{
+                botNavBar.visibility = View.VISIBLE
+            }
+        }
+    }
 
 
 }
