@@ -12,11 +12,11 @@
         tools:layout="@layout/landing_fragment"/>
     <navigation
         android:id="@+id/navigation_EmployeeManagement"
-        app:startDestination="@id/pinPadFragment2" >
+        app:startDestination="@id/pinPadFragment_toConfirmation" >
         <fragment
-            android:id="@+id/pinPadFragment2"
+            android:id="@+id/pinPadFragment_toConfirmation"
             android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.pinpad.PinPadFragment"
-            android:label="pin_pad_fragment"
+            android:label="pin_pad_fragment_to_employee"
             tools:layout="@layout/pin_pad_fragment">
             <action
                 android:id="@+id/action_pinPadFragment_to_manageEmployeeFragment"
@@ -43,16 +43,16 @@
     </navigation>
     <navigation
         android:id="@+id/navigation_CheckInOut"
-        app:startDestination="@id/pinPadFragment" >
+        app:startDestination="@id/pinPadFragment_toConfirmation" >
         <fragment
             android:id="@+id/confirmationFragment"
             android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.confirmation.ConfirmationFragment"
             android:label="confirmation_fragment"
             tools:layout="@layout/confirmation_fragment"/>
         <fragment
-            android:id="@+id/pinPadFragment"
+            android:id="@+id/pinPadFragment_toConfirmation"
             android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.pinpad.PinPadFragment"
-            android:label="pin_pad_fragment"
+            android:label="pin_pad_fragment_to_checkinout"
             tools:layout="@layout/pin_pad_fragment">
             <action
                 android:id="@+id/action_pinPadFragment_to_confirmationFragment"

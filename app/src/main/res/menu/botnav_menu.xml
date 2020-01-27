@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/landingFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/pinPadFragment_toConfirmation"
+        android:icon="@drawable/ic_checked_in"
+        android:title="Current"
+        android:enabled="false"/>
+    <item
+        android:id="@+id/navigation_EmployeeManagement"
+        android:icon="@drawable/ic_people"
+        android:title="Employee" />
+</menu>
