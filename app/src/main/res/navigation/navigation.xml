@@ -6,22 +6,21 @@
     app:startDestination="@id/landingFragment">
 
     <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.confirmation.ConfirmationFragment"
+        android:label="confirmation_fragment"
+        tools:layout="@layout/confirmation_fragment" />
+    <fragment
         android:id="@+id/landingFragment"
         android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.landing.LandingFragment"
         android:label="LandingFragment"
-        tools:layout="@layout/landing_fragment"/>
+        tools:layout="@layout/landing_fragment">
+        <action
+            android:id="@+id/action_landingFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
     <navigation
-        android:id="@+id/navigation_EmployeeManagement"
-        app:startDestination="@id/pinPadFragment_toConfirmation" >
-        <fragment
-            android:id="@+id/pinPadFragment_toConfirmation"
-            android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.pinpad.PinPadFragment"
-            android:label="pin_pad_fragment"
-            tools:layout="@layout/pin_pad_fragment">
-            <action
-                android:id="@+id/action_pinPadFragment_to_manageEmployeeFragment"
-                app:destination="@id/manageEmployeeFragment" />
-        </fragment>
+        android:id="@+id/navigation_EmployeeManagement">
         <fragment
             android:id="@+id/manageEmployeeFragment"
             android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.manageemployee.ManageEmployeeFragment"
@@ -39,24 +38,6 @@
             <action
                 android:id="@+id/action_addEditEmployeeFragment_to_manageEmployeeFragment"
                 app:destination="@id/manageEmployeeFragment" />
-        </fragment>
-    </navigation>
-    <navigation
-        android:id="@+id/navigation_CheckInOut"
-        app:startDestination="@id/pinPadFragment_toConfirmation" >
-        <fragment
-            android:id="@+id/confirmationFragment"
-            android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.confirmation.ConfirmationFragment"
-            android:label="confirmation_fragment"
-            tools:layout="@layout/confirmation_fragment"/>
-        <fragment
-            android:id="@+id/pinPadFragment_toConfirmation"
-            android:name="com.steamedbunx.android.employeeworkinghourtracker.ui.pinpad.PinPadFragment"
-            android:label="pin_pad_fragment"
-            tools:layout="@layout/pin_pad_fragment">
-            <action
-                android:id="@+id/action_pinPadFragment_to_confirmationFragment"
-                app:destination="@id/confirmationFragment" />
         </fragment>
     </navigation>
 </navigation>
