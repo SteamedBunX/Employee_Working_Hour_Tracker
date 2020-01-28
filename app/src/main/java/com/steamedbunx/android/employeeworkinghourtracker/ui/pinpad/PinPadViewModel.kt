@@ -8,13 +8,17 @@ import com.steamedbunx.android.employeeworkinghourtracker.CHECK_OUT
 import com.steamedbunx.android.employeeworkinghourtracker.MANAGE_EMPLOYEE
 
 class PinPadViewModel : ViewModel() {
-    val _currentPinDigit = MutableLiveData<Int>()
+    private val _currentPinDigit = MutableLiveData<Int>()
     val currentPinDigit:LiveData<Int>
         get() = _currentPinDigit
 
-    val _requestComplete = MutableLiveData<Boolean>(false)
+    private val _requestComplete = MutableLiveData<Boolean>(false)
     val requestComplete:LiveData<Boolean>
         get() = _requestComplete
+
+    private val _requestCancelled = MutableLiveData<Boolean>(false)
+    val requestCancelled
+        get() = _requestCancelled
 
     var requestMode = 0
     var currentPin = arrayListOf<Char>()
@@ -28,17 +32,19 @@ class PinPadViewModel : ViewModel() {
             CHECK_IN->1
             CHECK_OUT->1
             MANAGE_EMPLOYEE->
-                if(String(currentPin.toCharArray()).equals("1124")){
+                if(String(currentPin.toCharArray()) == "1124"){
                     _requestComplete.value = true
                 }
         }
     }
 
-    fun delete(){
+    fun deleteOrCancel(){
         val lastIndex = currentPin.count() - 1
         if(lastIndex > -1){
             currentPin.removeAt(lastIndex)
             _currentPinDigit.value = currentPin.count()
+        }else{
+            _requestCancelled.value = true
         }
     }
 

@@ -271,7 +271,7 @@
                 app:layout_constraintVertical_bias="0.325" />
 
             <Button
-                android:id="@+id/button_Pad_12"
+                android:id="@+id/button_Pad_Delete_Cancel"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
