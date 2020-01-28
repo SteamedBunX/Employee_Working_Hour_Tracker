@@ -44,10 +44,14 @@ class PinPadFragment : Fragment() {
 
     private fun setupLiveDataObservers() {
         viewModel.requestCancelled.observe(this, Observer {
-            cancelRequest()
+            if(it) {
+                cancelRequest()
+            }
         })
         viewModel.requestComplete.observe(this, Observer{
-            completeRequest()
+            if(it) {
+                completeRequest()
+            }
         })
         viewModel.currentPinDigit.observe(this, Observer {
             if(it == 0){
