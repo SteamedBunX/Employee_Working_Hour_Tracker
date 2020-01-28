@@ -8,7 +8,7 @@ import com.steamedbunx.android.employeeworkinghourtracker.CHECK_OUT
 import com.steamedbunx.android.employeeworkinghourtracker.MANAGE_EMPLOYEE
 
 class PinPadViewModel : ViewModel() {
-    private val _currentPinDigit = MutableLiveData<Int>()
+    private val _currentPinDigit = MutableLiveData<Int>(0)
     val currentPinDigit:LiveData<Int>
         get() = _currentPinDigit
 
